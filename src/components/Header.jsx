@@ -10,6 +10,7 @@ const Header = () => {
                     src="https://giphy.com/embed/EO8j7ItruGZaM"
                     frameBorder="0"
                     className="giphy-embed"
+                    title="logo-gif"
                 ></iframe>
                 <div className="header__logo">
                     <span className="diy">DIY</span>

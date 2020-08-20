@@ -177,11 +177,15 @@ hr {
     margin-bottom: 2.5rem;
 }
 
-.view-all-link {
+.view-all-link,
+.view-all-link:link,
+.view-all-link:visited {
+    color: #333;
     float: right;
     font-size: 2rem;
     padding-left: 1rem;
     position: relative;
+    text-decoration: none;
     top: 2rem;
     transition: all 0.3s;
 }

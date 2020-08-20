@@ -1,5 +1,4 @@
 import React from "react";
-import MicNoneIcon from "@material-ui/icons/MicNone";
 
 import "../App.css";
 

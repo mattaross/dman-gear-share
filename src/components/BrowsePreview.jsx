@@ -7,7 +7,9 @@ const BrowsePreview = () => {
     return (
         <div className="browse-preview">
             <h1 className="browse-preview__heading">Browse gear:</h1>
-            <a className="view-all-link">View all &rarr;</a>
+            <a className="view-all-link" href="/">
+                View all &rarr;
+            </a>
             <Grid />
         </div>
     );
