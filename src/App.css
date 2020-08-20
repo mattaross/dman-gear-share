@@ -1,38 +1,365 @@
-.App {
-  text-align: center;
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    margin: 0px;
+    padding: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+    font-size: 62.5%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    background-color: #b3e5fc;
+    background-image: url("https://www.transparenttextures.com/patterns/notebook.png");
+    box-sizing: border-box;
+    color: #333;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    padding: 3rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+hr {
+    border-style: none;
+    border-top: 1px solid #333;
+    height: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+    font-size: 2rem;
+    margin-bottom: 3rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header__logo-box {
+    /* background-color: blue; */
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+}
+
+.giphy-embed {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 50%;
+}
+
+.header__logo {
+    color: #333;
+    display: inline-block;
+    padding-left: 3rem;
+    vertical-align: top;
+    width: 50%;
+}
+
+.diy {
+    color: #0288d1;
+    font-family: "Rowdies", cursive;
+    font-size: 3rem;
+    letter-spacing: 1.4rem;
+    -webkit-text-stroke: 1.5px #333;
+}
+
+.music-action-network {
+    font-family: "Source Code Pro", monospace;
+    font-weight: bold;
+}
+
+.music {
+    letter-spacing: 0.6rem;
+}
+
+.action {
+    letter-spacing: 0.23rem;
+}
+
+.header__title {
+    background-image: linear-gradient(to bottom right, #77d4ff, #0288d1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-family: "Fredoka One", cursive;
+    font-size: 4rem;
+    height: 100%;
+    letter-spacing: 2rem;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    width: 80%;
+    -webkit-text-stroke: 0.1px #333;
+}
+
+.nav {
+    margin-bottom: 0.5rem;
+}
+
+.nav__list {
+    text-align: center;
+}
+
+.nav__item {
+    display: inline-block;
+    font-size: 2rem;
+    margin-right: 6rem;
+    padding: 0.1rem 0.5rem;
+    position: relative;
+    text-transform: uppercase;
+    transition: transform 0.3s;
+}
+
+.nav__item::after {
+    background-color: #0288d1;
+    border-radius: 3px;
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transform: scaleX(0);
+    transition: all 0.3s;
+    width: 100%;
+    z-index: -1;
+}
+
+.nav__item:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.nav__item:hover {
+    transform: scale(1.2);
+}
+
+.nav__link,
+.nav__link:link,
+.nav__link:visited {
+    color: #212121;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.nav__link:hover {
+    color: white;
+}
+
+.welcome {
+    margin: 4rem 20rem 8rem;
+}
+
+.welcome h2 {
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+}
+
+.welcome p {
+    font-size: 1.6rem;
+}
+
+.browse-preview {
+    background-color: #fff1ec;
+    border: 1px solid #212121;
+    border-radius: 3px;
+    margin: 4rem 16rem 8rem;
+    padding: 1rem 6rem;
+}
+
+.browse-preview__heading {
+    background-image: linear-gradient(to bottom, #ffad94, #ff5722);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-size: 4rem;
+    margin-bottom: 2.5rem;
+}
+
+.view-all-link {
+    float: right;
+    font-size: 2rem;
+    padding-left: 1rem;
+    position: relative;
+    top: 2rem;
+    transition: all 0.3s;
+}
+
+.view-all-link:hover {
+    border-left: 4px solid #0288d1;
+    color: #0288d1;
+    cursor: pointer;
+    transform: translateX(1rem);
+}
+
+.row {
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.row:not(:last-child) {
+    margin-bottom: 4.5rem;
+}
+
+.row:last-child {
+    margin-bottom: 2.5rem;
+}
+
+/* Clearfix */
+.row::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.row .column {
+    border: 1px solid #212121;
+    border-radius: 3px;
+    float: left;
+    overflow: hidden;
+    padding-top: calc((100% - 3 * 4.5rem) / 4);
+    position: relative;
+    transition: all 0.3s;
+    width: calc((100% - 3 * 4.5rem) / 4);
+}
+
+.row .column:hover {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transform: scale(1.05) translateY(-0.4rem);
+}
+
+.row .column:hover:active {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    transform: scale(1.02) translateY(0.1rem);
+}
+
+.row .column::after {
+    background-image: linear-gradient(
+        to bottom right,
+        transparent 0%,
+        transparent 43%,
+        #fff1ecd8 47%,
+        #fff1ecd8 53%,
+        transparent 60%
+    );
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    transform: translate(60%, 60%) scale(1.5);
+    transition: all 0.5s cubic-bezier(0.51, 0.01, 0.58, 1);
+    width: 100%;
+    z-index: 1;
+}
+
+.row .column:hover::after {
+    opacity: 1;
+    transform: translate(-60%, -60%);
+}
+
+.row .column:not(:last-child) {
+    margin-right: 4.5rem;
+}
+
+.column__text {
+    color: #fff1ec;
+    font-size: 3rem;
+    left: 50%;
+    letter-spacing: 0.3rem;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    z-index: 2;
+}
+
+.guitar {
+    background-image: linear-gradient(
+            to bottom right,
+            #e91e63b2 40%,
+            #e91e63d8 50%,
+            #e91e63b2 60%
+        ),
+        url(./images/guitar.jpg);
+    background-size: cover;
+}
+
+.bass {
+    background-image: linear-gradient(
+            to bottom right,
+            #ff5722b2 40%,
+            #ff5722d8 50%,
+            #ff5722b2 60%
+        ),
+        url(./images/bass.jpg);
+    background-size: cover;
+}
+
+.drums {
+    background-image: linear-gradient(
+            to bottom right,
+            #ffc107b2 40%,
+            #ffc107d8 50%,
+            #ffc107b2 60%
+        ),
+        url(./images/drums.jpg);
+    background-size: cover;
+}
+
+.keys {
+    background-image: linear-gradient(
+            to bottom right,
+            #4caf50b2 40%,
+            #4caf50d8 50%,
+            #4caf50b2 60%
+        ),
+        url(./images/keys.jpg);
+    background-size: cover;
+}
+
+.microphone {
+    background-image: linear-gradient(
+            to bottom right,
+            #009688b2 40%,
+            #009688d8 50%,
+            #009688b2 60%
+        ),
+        url(./images/microphone.jpg);
+    background-size: cover;
+}
+
+.speaker {
+    background-image: linear-gradient(
+            to bottom right,
+            #448affb2 40%,
+            #448affd8 50%,
+            #448affb2 60%
+        ),
+        url(./images/speaker.jpg);
+    background-size: cover;
+}
+
+.cable {
+    background-image: linear-gradient(
+            to bottom right,
+            #9c27b0b2 40%,
+            #9c27b0d8 50%,
+            #9c27b0b2 60%
+        ),
+        url(./images/cable.jpg);
+    background-size: cover;
+}
+
+.misc {
+    background-image: linear-gradient(
+            to bottom right,
+            #795548b2 40%,
+            #795548d8 50%,
+            #795548b2 60%
+        ),
+        url(./images/misc.jpg);
+    background-size: cover;
 }
